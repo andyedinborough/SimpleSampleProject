@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Mvc3Razor.Models.ContactModel>
+
+    <table>
+        <tr>
+            <th>
+                User Name
+            </th>
+            <th>
+                First Name
+            </th>
+            <th>
+                Last Name
+            </th>
+            <th>
+                Phone
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+
+    @foreach (var item in Model) {
+    
+        <tr>
+            <td>
+                @item.UserName
+            </td>
+            <td>
+                @item.FirstName
+            </td>
+            <td>
+                @item.LastName
+            </td>
+            <td>
+                @item.Phone
+            </td>
+            <td>
+                @Ajax.ActionLink("Edit", "EditContact", new { id = item.UserName }, new AjaxOptions { UpdateTargetId = "result-container" }) |
+                @Ajax.ActionLink("Delete", "Delete", new { id = item.UserName }, new AjaxOptions { UpdateTargetId = "result-container" }) |
+                @Ajax.ActionLink("View Details", "GetDetails", new { id = item.UserName }, new AjaxOptions { UpdateTargetId = "result-container" })
+            </td>
+        </tr>
+    
+    }
+
+    </table>
+

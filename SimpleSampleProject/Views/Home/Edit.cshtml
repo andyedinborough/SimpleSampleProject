@@ -1,0 +1,50 @@
+﻿@model Mvc3Razor.Models.ContactModel
+
+    @using (Ajax.BeginForm(
+        new AjaxOptions {
+            UpdateTargetId = "maincontent" 
+        })) 
+    {
+	@Html.Hidden("UserName", Model.UserName)   
+        @Html.ValidationSummary(true)
+ 
+    <fieldset>
+        <legend>Edit Contact</legend>
+            
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserName)
+        </div>
+        <div class="editor-field">
+		    @Html.TextBoxFor(model => model.UserName, new { disabled = "disabled" })
+        </div>
+            
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FirstName)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.FirstName)
+            @Html.ValidationMessageFor(model => model.FirstName)
+        </div>
+            
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LastName)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.LastName)
+            @Html.ValidationMessageFor(model => model.LastName)
+        </div>
+            
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Phone)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Phone)
+            @Html.ValidationMessageFor(model => model.Phone)
+        </div>
+            
+        <p>
+            <input type="submit" value="Save" /> | @Ajax.ActionLink("Close", "Cancel", new AjaxOptions { UpdateTargetId = "result-container" })
+        </p>
+    </fieldset>
+    }
+

@@ -1,0 +1,7 @@
+E:\Solutions\Mvc3Razor\bin\Mvc3Razor.dll
+E:\Solutions\Mvc3Razor\bin\Mvc3Razor.pdb
+E:\Solutions\Mvc3Razor\obj\Debug\ResolveAssemblyReference.cache
+E:\Solutions\Mvc3Razor\obj\Debug\Mvc3Razor.dll
+E:\Solutions\Mvc3Razor\obj\Debug\Mvc3Razor.pdb
+E:\Solutions\Mvc3Razor\bin\EntityFramework.dll
+E:\Solutions\Mvc3Razor\bin\EntityFramework.xml
